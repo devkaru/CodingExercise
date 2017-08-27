@@ -1,0 +1,86 @@
+﻿@model CodingExercise.BAL.Models.PersonalDataModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+ 
+    @using (Html.BeginForm("Index", "Registration", FormMethod.Post))
+    {
+        <div class="container" style="width:850px;align-content:center">
+            <h1 class="well" style="background-color: darkorange;">Registration Form</h1>
+            <div class="col-lg-12 well" style="background-color: antiquewhite;">
+                <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>Full Name</label>
+                                    @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Full Name Here..", required = "required" } })
+                                   
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label>Nick Name</label>
+                                    @Html.EditorFor(model => model.NickName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Nick Name Here..", required = "required" } })
+                                   
+                                </div>
+                            </div>
+                          
+                                <div class="form-group">
+                                    <label>Home Address</label>
+                                    @Html.EditorFor(model => model.HomeAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Home Address Here..", @rows = 3 } })
+                           
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label>Home Phone</label>
+                                    @Html.EditorFor(model => model.HomePhone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Home Number Here.." , @type = "number" } })
+                                    
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label>Mobile Phone</label>
+                                    @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Mobile Number Here..", required = "required" , @type = "number" } })
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label>Home Fax</label>
+                                    @Html.EditorFor(model => model.HomeFax, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Home Fex Here..", @type = "number" } })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 form-group">
+                                    <label>Home Email Address</label>
+                                    @Html.EditorFor(model => model.HomeEmailAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Home Email Address Here..", required = "required" } })
+                                </div>
+                                <div class="col-sm-6 form-group">
+                                    <label>Date Of Bith</label>
+                                    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Date Of Birth Here..", required = "required", @type="date" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>SSN</label>
+                                @Html.EditorFor(model => model.SSN, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter SSN Here..",@type = "number" } })
+                            </div>
+                            <div class="form-group">
+                                <label>Passport Number</label>
+                                @Html.EditorFor(model => model.PassportNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Passport Number Here.." } })
+                            </div>
+                            <div class="form-group">
+                                <label>Driver License Number</label>
+                                @Html.EditorFor(model => model.DriverLicenseNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Driver License Number Here.." } })
+                            </div>
+                            <button  style="width: 279px;" type="submit" class="btn btn-lg btn-info">Submit</button>
+                            <div  class="pull-right" style="width:150px;padding-left:20px">@Html.ActionLink("Back to List", "Index", "Home")</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
